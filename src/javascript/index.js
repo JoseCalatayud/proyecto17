@@ -39,24 +39,18 @@ $(function () {
             data: JSON.stringify(datos), // Envía el JSON plano
             contentType: "application/json", // Especifica que el contenido es JSON
             success: function (respuesta) {
-                console.log("Respuesta del servidor:", respuesta);
+                $('input').val('')
+                $('input').val(`Registro guardado`)
             },
             error: function (error) {
-                console.error("Error al enviar datos:", error);
+                $('input').val('')
+                $('input').val(error.responseText)
             }
         });
-        // let data = JSON.stringify(datos)
-        // $.post("https://my-json-server.typicode.com/desarrollo-seguro/dato/solicitudes", data)
-        //     .done(() => {
-        //         $('input').val('')
-        //         $('input').val(`Registro guardado`)
-        //     })
-        //     .fail((e) => {
-        //         console.log(e)
-        //     })
+        
     }
     function modificar() {
-        let datos
+        
     }
     function borrar(id) {
         $.ajax({
